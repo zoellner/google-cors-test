@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test Autocomplete with COEP</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <input id="test-input" type="text" placeholder="Enter a location" />
+    <button id="button">Test</button>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=postInjectScripts"
+      async
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
