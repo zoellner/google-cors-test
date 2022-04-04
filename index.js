@@ -9,9 +9,14 @@ const port = process.env.PORT || 8080;
 app.listen(port);
 
 app.use(helmet({
-  contentSecurityPolicy: false,
+  // disable these to get the autocomplete to work
   crossOriginEmbedderPolicy: true,
-  referrerPolicy: { policy: 'strict-origin-when-cross-origin' }
+  crossOriginOpenerPolicy: true,
+  crossOriginResourcePolicy: true,
+
+  // other headers
+  referrerPolicy: { policy: 'strict-origin-when-cross-origin' },
+  contentSecurityPolicy: false
 }));
 app.use(express.static('public'))
 
